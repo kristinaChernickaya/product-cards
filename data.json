@@ -21,7 +21,7 @@
     "name": "Mini",
     "price": 2300,
     "date": "2023-01-15",
-    "category": "tablets"
+    "category": "tablet"
   },
   {
     "id": 4,
@@ -37,6 +37,6 @@
     "name": "Good tab",
     "price": 3860,
     "date": "2020-01-20",
-    "category": "tablets"
+    "category": "tablet"
   }
 ]

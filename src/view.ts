@@ -1,13 +1,17 @@
-import { ProductCard } from "./types";
+import { TProductCard } from "./types";
 
 export class View {
   constructor() {}
 
   elements = {
     productsList: document.querySelector(".productList"),
+    filterInput: document.querySelector("#filterInput"),
+    sortCategorySelect: document.querySelector("#sortCategorySelect"),
+    sortTypeSelect: document.querySelector("#sortTypeSelect"),
+    sortOrderSelect: document.querySelector("#sortOrderSelect"),
   };
 
-  render(dataList: ProductCard[]) {
+  render(dataList: TProductCard[]) {
     dataList.forEach((product) => {
       const markup = `
         <li>
@@ -19,5 +23,13 @@ export class View {
       `;
       this.elements.productsList?.insertAdjacentHTML("afterbegin", markup);
     });
+  }
+
+  getElementValue() {
+    return {
+      sortCategoryValue: this.elements.sortCategorySelect?.value,
+      sortTypeValue: this.elements.sortTypeSelect?.value,
+      sortOrderValue: this.elements.sortOrderSelect?.value,
+    };
   }
 }

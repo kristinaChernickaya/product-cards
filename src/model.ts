@@ -1,7 +1,7 @@
-import { ProductCard } from "./types";
+import { TProductCard, TSelectValue } from "./types";
 
 export class Model {
-  data: ProductCard[];
+  data: TProductCard[];
 
   constructor() {
     this.data = [];
@@ -21,4 +21,51 @@ export class Model {
         });
     });
   };
+
+  sortProduct(dataValue: TSelectValue) {
+    const { sortCategoryValue, sortTypeValue, sortOrderValue } = dataValue;
+
+    let filterData;
+    if (sortCategoryValue !== "all") {
+      filterData = this.data.filter((product) => {
+        return product.category === sortCategoryValue;
+      });
+    } else {
+      filterData = [...this.data];
+    }
+
+    return filterData.sort((a, b) => {
+      switch (sortTypeValue) {
+        case "date":
+          return sortOrderValue !== "ask"
+            ? Date.parse(a.date) - Date.parse(b.date)
+            : Date.parse(b.date) - Date.parse(a.date);
+        case "price":
+          return sortOrderValue !== "ask"
+            ? a.price - b.price
+            : b.price - a.price;
+        case "alphabet":
+          const priceA = a.name.toLowerCase();
+          const priceB = b.name.toLowerCase();
+
+          if (sortOrderValue !== "ask") {
+            if (priceA < priceB) {
+              return 1;
+            } else if (priceA > priceB) {
+              return -1;
+            } else {
+              return 0;
+            }
+          } else {
+            if (priceA > priceB) {
+              return 1;
+            } else if (priceA < priceB) {
+              return -1;
+            } else {
+              return 0;
+            }
+          }
+      }
+    });
+  }
 }
