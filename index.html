@@ -1,13 +1,57 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Product cards</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <div id="app">
+      <h1>Product cards</h1>
+      <form id="form">
+        <div class="sortBody">
+          <div class="sortContent">
+            <label for="filterInput">Filter for leters</label>
+            <input type="text" id="filterInput" />
+          </div>
+        </div>
+
+        <div class="sortContent">
+          <p>Filter for categories:</p>
+          <input type="text" id="filterInput" />
+          <select>
+            <option value="all"></option>
+            <option value="laptop">Laptop</option>
+            <option value="tablets">Tablets</option>
+            <option value="phones">Phones</option>
+            <option value="headset">Гарнитура</option>
+          </select>
+        </div>
+
+        <div class="sortContent">
+          <p>Type sort:</p>
+          <input type="text" id="filterInput" />
+          <select>
+            <option value="date">Date</option>
+            <option value="prise">Prise</option>
+            <option value="alphabet">Alphabet</option>
+          </select>
+        </div>
+
+        <div class="sortContent">
+          <p>Direct:</p>
+          <input type="text" id="filterInput" />
+          <select>
+            <option value="ask">Ask</option>
+            <option value="desk">Desk</option>
+          </select>
+        </div>
+        <button type="button">Reset</button>
+      </form>
+      <ul class="productList"></ul>
+    </div>
+    <script type="module" src="/src/model.ts"></script>
+    <script type="module" src="/src/controller.ts"></script>
+    <script type="module" src="/src/view.ts"></script>
   </body>
 </html>

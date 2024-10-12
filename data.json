@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "subtitle": "Notebook",
+    "name": "Pro",
+    "price": 5000,
+    "date": "2024-01-15",
+    "category": "laptop"
+  },
+  {
+    "id": 2,
+    "subtitle": "Phone",
+    "name": "Lite",
+    "price": 1300,
+    "date": "2024-02-11",
+    "category": "phone"
+  },
+  {
+    "id": 3,
+    "subtitle": "Tablets",
+    "name": "Mini",
+    "price": 2300,
+    "date": "2023-01-15",
+    "category": "tablets"
+  },
+  {
+    "id": 4,
+    "subtitle": "Headset",
+    "name": "Sport",
+    "price": 354,
+    "date": "2020-02-25",
+    "category": "headset"
+  },
+  {
+    "id": 5,
+    "subtitle": "Tablets",
+    "name": "Good tab",
+    "price": 3860,
+    "date": "2020-01-20",
+    "category": "tablets"
+  }
+]
