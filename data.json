@@ -38,5 +38,13 @@
     "price": 3860,
     "date": "2020-01-20",
     "category": "tablet"
+  },
+  {
+    "id": 6,
+    "subtitle": "Phone",
+    "name": "Lite PRO",
+    "price": 1900,
+    "date": "2020-01-20",
+    "category": "phone"
   }
 ]

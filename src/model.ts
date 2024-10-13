@@ -2,9 +2,11 @@ import { TProductCard, TSelectValue } from "./types";
 
 export class Model {
   data: TProductCard[];
+  filterData: TProductCard[];
 
   constructor() {
     this.data = [];
+    this.filterData = [];
   }
 
   loadingData = () => {
@@ -13,6 +15,7 @@ export class Model {
         .then((result) => result.json())
         .then((result) => {
           this.data = result;
+          this.filterData = [...this.data];
           resolve();
         })
         .catch((err) => {
@@ -27,11 +30,11 @@ export class Model {
 
     let filterData;
     if (sortCategoryValue !== "all") {
-      filterData = this.data.filter((product) => {
+      filterData = this.filterData.filter((product) => {
         return product.category === sortCategoryValue;
       });
     } else {
-      filterData = [...this.data];
+      filterData = [...this.filterData];
     }
 
     return filterData.sort((a, b) => {
@@ -67,5 +70,15 @@ export class Model {
           }
       }
     });
+  }
+
+  filterSearchForLetter(curentValue: string) {
+    if (curentValue === "") {
+      this.filterData = [...this.data];
+    } else {
+      this.filterData = this.data.filter((product) => {
+        return product.name.toLowerCase().includes(curentValue);
+      });
+    }
   }
 }

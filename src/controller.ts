@@ -9,19 +9,37 @@ init();
 async function init() {
   await model.loadingData();
   view.render(model.data);
-  addEventListeners();
+  addListenerElement();
 }
 
-function addEventListeners() {
-  view.elements.filterInput?.addEventListener("change", sortProduct);
-  view.elements.sortCategorySelect?.addEventListener("change", sortProduct);
-  view.elements.sortTypeSelect?.addEventListener("change", sortProduct);
-  view.elements.sortOrderSelect?.addEventListener("change", sortProduct);
+function addListenerElement() {
+  view.elements.sortCategorySelect?.addEventListener(
+    "change",
+    sortProductController
+  );
+  view.elements.sortTypeSelect?.addEventListener(
+    "change",
+    sortProductController
+  );
+  view.elements.sortOrderSelect?.addEventListener(
+    "change",
+    sortProductController
+  );
+  view.elements.filterInput?.addEventListener(
+    "input",
+    filterProductsController
+  );
 }
 
-function sortProduct() {
-  const dataValue = view.getElementValue();
-  const sortingData = model.sortProduct(dataValue);
-  console.log(sortingData);
-  view.render(sortingData);
+function sortProductController() {
+  const currentValues = view.sortSelectValue();
+  const sortData = model.sortProduct(currentValues);
+  console.log(sortData);
+  view.render(sortData);
+}
+
+function filterProductsController() {
+  const curentValue = this.value.toLowerCase();
+  model.filterSearchForLetter(curentValue);
+  sortProductController();
 }

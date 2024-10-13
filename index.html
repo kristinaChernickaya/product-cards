@@ -3,49 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css" />
     <title>Product cards</title>
   </head>
   <body>
     <div id="app">
-      <h1>Product cards</h1>
-      <form id="form">
-        <div class="sortBody">
-          <div class="sortContent">
-            <label for="filterInput">Filter for leters</label>
-            <input type="text" id="filterInput" />
+      <div class="container">
+        <h1>Product cards</h1>
+        <form id="form">
+          <div class="sortBody">
+            <div class="sortContent">
+              <div><label for="filterInput">Filter:</label></div>
+              <input id="filterInput" type="text" />
+            </div>
           </div>
-        </div>
 
-        <div class="sortContent">
-          <p>Filter for categories:</p>
-          <select id="sortCategorySelect">
-            <option value="all">All</option>
-            <option value="laptop">Laptop</option>
-            <option value="tablet">Tablets</option>
-            <option value="phone">Phones</option>
-            <option value="headset">Headset</option>
-          </select>
-        </div>
+          <div class="sortContent">
+            <p>Filter for categories:</p>
+            <select id="sortCategorySelect">
+              <option value="all">All</option>
+              <option value="laptop">Laptop</option>
+              <option value="tablet">Tablets</option>
+              <option value="phone">Phones</option>
+              <option value="headset">Headset</option>
+            </select>
+          </div>
 
-        <div class="sortContent">
-          <p>Type sort:</p>
-          <select id="sortTypeSelect">
-            <option value="date">Date</option>
-            <option value="price">Prise</option>
-            <option value="alphabet">Alphabet</option>
-          </select>
-        </div>
+          <div class="sortContent">
+            <p>Type sort:</p>
+            <select id="sortTypeSelect">
+              <option value="date">Date</option>
+              <option value="price">Prise</option>
+              <option value="alphabet">Alphabet</option>
+            </select>
+          </div>
 
-        <div class="sortContent">
-          <p>Order:</p>
-          <select id="sortOrderSelect">
-            <option value="ask">Ask</option>
-            <option value="desk">Desk</option>
-          </select>
-        </div>
-        <button type="button">Reset</button>
-      </form>
-      <ul class="productList"></ul>
+          <div class="sortContent">
+            <p>Order:</p>
+            <select id="sortOrderSelect">
+              <option value="ask">Ask</option>
+              <option value="desk">Desk</option>
+            </select>
+          </div>
+          <div>
+            <button type="button">Reset</button>
+          </div>
+        </form>
+        <ul class="productList"></ul>
+      </div>
     </div>
     <script type="module" src="/src/model.ts"></script>
     <script type="module" src="/src/controller.ts"></script>

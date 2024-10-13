@@ -12,11 +12,12 @@ export class View {
   };
 
   render(dataList: TProductCard[]) {
+    this.elements.productsList.innerHTML = "";
     dataList.forEach((product) => {
       const markup = `
         <li>
-          <span>${product.subtitle}</span>
           <h3>${product.name}</h3>
+          <span>${product.subtitle}</span>
           <p>Price: <b> ${product.price}$</b></p>
           <p>${product.category}</p>
         </li>
@@ -25,7 +26,7 @@ export class View {
     });
   }
 
-  getElementValue() {
+  sortSelectValue() {
     return {
       sortCategoryValue: this.elements.sortCategorySelect?.value,
       sortTypeValue: this.elements.sortTypeSelect?.value,
