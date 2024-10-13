@@ -2,7 +2,7 @@
   {
     "id": 1,
     "subtitle": "Notebook",
-    "name": "Pro",
+    "name": "Digma EVE A5820",
     "price": 5000,
     "date": "2024-01-15",
     "category": "laptop"
@@ -17,7 +17,7 @@
   },
   {
     "id": 3,
-    "subtitle": "Tablets",
+    "subtitle": "Tablet",
     "name": "Mini",
     "price": 2300,
     "date": "2023-01-15",
@@ -33,7 +33,7 @@
   },
   {
     "id": 5,
-    "subtitle": "Tablets",
+    "subtitle": "Tablet",
     "name": "Good tab",
     "price": 3860,
     "date": "2020-01-20",
@@ -46,5 +46,21 @@
     "price": 1900,
     "date": "2020-01-20",
     "category": "phone"
+  },
+  {
+    "id": 7,
+    "subtitle": "Notebook",
+    "name": "Lenova Slim 3",
+    "price": 5200,
+    "date": "2019-06-22",
+    "category": "laptop"
+  },
+  {
+    "id": 8,
+    "subtitle": "Notebook",
+    "name": "Lenovo 15IAU7",
+    "price": 3640,
+    "date": "2024-01-15",
+    "category": "laptop"
   }
 ]

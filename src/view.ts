@@ -4,6 +4,7 @@ export class View {
   constructor() {}
 
   elements = {
+    form: document.querySelector("#form"),
     productsList: document.querySelector(".productList"),
     filterInput: document.querySelector("#filterInput"),
     sortCategorySelect: document.querySelector("#sortCategorySelect"),
@@ -26,11 +27,20 @@ export class View {
     });
   }
 
-  sortSelectValue() {
+  getSelectValue() {
     return {
       sortCategoryValue: this.elements.sortCategorySelect?.value,
       sortTypeValue: this.elements.sortTypeSelect?.value,
       sortOrderValue: this.elements.sortOrderSelect?.value,
     };
+  }
+
+  resetFilter() {
+    const { sortCategorySelect, sortTypeSelect, sortOrderSelect, filterInput } =
+      this.elements;
+    sortCategorySelect.value = "all";
+    sortTypeSelect.value = "date";
+    sortOrderSelect.value = "ask";
+    filterInput.value = "";
   }
 }

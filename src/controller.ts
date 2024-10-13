@@ -29,17 +29,26 @@ function addListenerElement() {
     "input",
     filterProductsController
   );
+  view.elements.form?.addEventListener("submit", resetFilterController);
 }
 
 function sortProductController() {
-  const currentValues = view.sortSelectValue();
+  const currentValues = view.getSelectValue();
   const sortData = model.sortProduct(currentValues);
-  console.log(sortData);
   view.render(sortData);
 }
 
 function filterProductsController() {
   const curentValue = this.value.toLowerCase();
+  console.log("sss", curentValue);
   model.filterSearchForLetter(curentValue);
+
   sortProductController();
+}
+
+function resetFilterController(e) {
+  e.preventDefault();
+  view.resetFilter();
+  view.render(model.data);
+  // filterProductsController();
 }
